@@ -1,0 +1,82 @@
+Task-5 Extra Learning Journal
+Hannu Sirén
+
+1) Go to url: https://www.tensorflow.org/tutorials/recurrent_quickdraw
+
+2) Download file: https://github.com/tensorflow/models/blob/master/tutorials/rnn/quickdraw/train_model.py
+
+3) Download data set in TFRecord form from: http://download.tensorflow.org/data/quickdraw_tutorial_dataset_v1.tar.gz
+
+4) Extract data set from tar.gz package using 7-zip
+I placed mine in "D:\Training datas\Quick Draw\records"
+
+5) run command in cmd: python train_model.py --training_data=D:/Training datas/Quick Draw/recordstraining.tfrecord-?????-of-????? --eval_data=D:/Training datas/Quick Draw/recordseval.tfrecord-?????-of-????? --classes_file=D:/Training datas/Quick Draw/recordstraining.tfrecord.classes
+
+6) Got Error: 
+Traceback (most recent call last):
+  File "train_model.py", line 378, in <module>
+    tf.app.run(main=main, argv=[sys.argv[0]] + unparsed)
+  File "C:\ProgramData\Anaconda3\envs\TIES4911\lib\site-packages\tensorflow\python\platform\app.py", line 48, in run
+    _sys.exit(main(_sys.argv[:1] + flags_passthrough))
+  File "train_model.py", line 289, in main
+    save_summary_steps=100))
+  File "C:\ProgramData\Anaconda3\envs\TIES4911\lib\site-packages\tensorflow\python\estimator\run_config.py", line 372, in __init__
+    log_step_count_steps=log_step_count_steps)
+  File "C:\ProgramData\Anaconda3\envs\TIES4911\lib\site-packages\tensorflow\python\estimator\run_config.py", line 593, in _replace
+    _validate_properties(config)
+  File "C:\ProgramData\Anaconda3\envs\TIES4911\lib\site-packages\tensorflow\python\estimator\run_config.py", line 175, in _validate_properties
+    message='model_dir should be non-empty')
+  File "C:\ProgramData\Anaconda3\envs\TIES4911\lib\site-packages\tensorflow\python\estimator\run_config.py", line 172, in _validate
+    raise ValueError(message)
+ValueError: model_dir should be non-empty
+
+7) Add folders to root of the disk. D:\tmp\quickdraw_model
+
+8) Modify command adding "--model_dir /tmp/quickdraw_model/"
+
+9) Run command in cmd: python train_model.py --training_data=D:/Training datas/Quick Draw/recordstraining.tfrecord-?????-of-????? --eval_data=D:/Training datas/Quick Draw/recordseval.tfrecord-?????-of-????? --classes_file=D:/Training datas/Quick Draw/recordstraining.tfrecord.classes --model_dir /tmp/quickdraw_model/
+
+10) Error:
+Traceback (most recent call last):
+  File "train_model.py", line 378, in <module>
+    tf.app.run(main=main, argv=[sys.argv[0]] + unparsed)
+  File "C:\ProgramData\Anaconda3\envs\TIES4911\lib\site-packages\tensorflow\python\platform\app.py", line 48, in run
+    _sys.exit(main(_sys.argv[:1] + flags_passthrough))
+  File "train_model.py", line 289, in main
+    save_summary_steps=100))
+  File "train_model.py", line 259, in create_estimator_and_specs
+    num_classes=get_num_classes(),
+  File "train_model.py", line 43, in get_num_classes
+    classes = [x for x in f]
+  File "train_model.py", line 43, in <listcomp>
+    classes = [x for x in f]
+  File "C:\ProgramData\Anaconda3\envs\TIES4911\lib\site-packages\tensorflow\python\lib\io\file_io.py", line 214, in __next__
+    return self.next()
+  File "C:\ProgramData\Anaconda3\envs\TIES4911\lib\site-packages\tensorflow\python\lib\io\file_io.py", line 208, in next
+    retval = self.readline()
+  File "C:\ProgramData\Anaconda3\envs\TIES4911\lib\site-packages\tensorflow\python\lib\io\file_io.py", line 177, in readline
+    self._preread_check()
+  File "C:\ProgramData\Anaconda3\envs\TIES4911\lib\site-packages\tensorflow\python\lib\io\file_io.py", line 79, in _preread_check
+    compat.as_bytes(self.__name), 1024 * 512, status)
+  File "C:\ProgramData\Anaconda3\envs\TIES4911\lib\site-packages\tensorflow\python\framework\errors_impl.py", line 473, in __exit__
+    c_api.TF_GetCode(self.status.status))
+tensorflow.python.framework.errors_impl.NotFoundError: NewRandomAccessFile failed to Create/Open: D:/Training : The system cannot find the file specified.
+; No such file or directory
+
+11) Modify command add brackets: python "train_model.py" "--training_data=D:/Training datas/Quick Draw/recordstraining.tfrecord-?????-of-?????" "--eval_data=D:/Training datas/Quick Draw/recordseval.tfrecord-?????-of-?????" "--classes_file=D:/Training datas/Quick Draw/recordstraining.tfrecord.classes" "--model_dir /tmp/quickdraw_model/"
+Error.
+
+12) Modify command add brackets and --model_dir: python "train_model.py" "--training_data=D:/Training datas/Quick Draw/recordstraining.tfrecord-?????-of-?????" "--eval_data=D:/Training datas/Quick Draw/recordseval.tfrecord-?????-of-?????" "--classes_file=D:/Training datas/Quick Draw/recordstraining.tfrecord.classes" "--model_dir=D:/tmp/quickdraw_model/"
+Error.
+
+13) Modify command fix data paths: python "train_model.py" "--training_data=D:/Training datas/Quick Draw/records/training.tfrecord-?????-of-?????" "--eval_data=D:/Training datas/Quick Draw/records/eval.tfrecord-?????-of-?????" "--classes_file=D:/Training datas/Quick Draw/records/training.tfrecord.classes" "--model_dir=D:/tmp/quickdraw_model/"
+
+14) Run command. Works.
+
+15) Let it run for 12h. Stopped it.
+
+16) Tried to modify command by adding "--steps=1000". Doesn't work. Still takes forever to run.
+
+
+
+

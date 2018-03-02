@@ -1,0 +1,84 @@
+{
+    "result": [
+        {
+            "class": "slug",
+            "score": "0.17148"
+        },
+        {
+            "class": "snail",
+            "score": "0.14746"
+        },
+        {
+            "class": "alligator",
+            "score": "0.13962"
+        },
+        {
+            "class": "scorpion",
+            "score": "0.13926"
+        },
+        {
+            "class": "trilobyte",
+            "score": "0.13288"
+        },
+        {
+            "class": "spider",
+            "score": "0.12876"
+        },
+        {
+            "class": "goose",
+            "score": "0.12418"
+        },
+        {
+            "class": "millipede",
+            "score": "0.12354"
+        },
+        {
+            "class": "snake",
+            "score": "0.12332"
+        },
+        {
+            "class": "dog",
+            "score": "0.11898"
+        },
+        {
+            "class": "lobster",
+            "score": "0.11395"
+        },
+        {
+            "class": "fish",
+            "score": "0.11309"
+        },
+        {
+            "class": "koala",
+            "score": "0.11217"
+        },
+        {
+            "class": "hairy spider",
+            "score": "0.11077"
+        },
+        {
+            "class": "ameeba",
+            "score": "0.10772"
+        },
+        {
+            "class": "toad",
+            "score": "0.10294"
+        },
+        {
+            "class": "frog",
+            "score": "0.10169"
+        },
+        {
+            "class": "penguin",
+            "score": "0.10086"
+        },
+        {
+            "class": "seagul",
+            "score": "0.06481"
+        },
+        {
+            "class": "lizard",
+            "score": "0.06477"
+        }
+    ]
+}

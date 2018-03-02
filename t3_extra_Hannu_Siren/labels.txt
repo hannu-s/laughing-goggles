@@ -1,0 +1,20 @@
+alligator
+fish
+frog
+hairy spider
+lizard
+scorpion
+snake
+spider
+toad
+trilobyte
+ameeba
+dog
+goose
+koala
+lobster
+millipede
+penguin
+seagul
+slug
+snail
